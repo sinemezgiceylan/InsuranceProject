@@ -1,17 +1,12 @@
 package service;
 
-import model.Insurance;
-import model.InsuranceTypeEnum;
+import model.*;
 
 public class InsuranceService {
-
-    public Insurance createInsurance(InsuranceTypeEnum insuranceTypeEnum, String name) {
-
+    public Insurance createInsurance(String name, InsuranceType insuranceTypeEnum) {
         Insurance insurance = new Insurance();
-
-            insurance.setInsuranceTypeEnum(insuranceTypeEnum);
-            insurance.setName(name);
-
-            return insurance;
+        insurance.setName(name);
+        insurance.setInsuranceTypeEnum(insuranceTypeEnum);
+        return insurance;
     }
 }

@@ -9,6 +9,9 @@ public class Agency {
     private ArrayList<InsuranceCompany> insuranceCompanyList;
     private ArrayList<Customer> customerList;
 
+    public Agency(String name) {
+        this.name = name;
+    }
     public Agency(){};
 
     public String getName() {

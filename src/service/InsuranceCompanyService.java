@@ -1,33 +1,23 @@
 package service;
 
-import model.BankAccount;
-import model.Insurance;
-import model.InsuranceCompany;
-import model.PaymentMovement;
+import model.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class InsuranceCompanyService {
-
-    public InsuranceCompany InsuranceCompany(String name, String taxOffice, String taxNumber,
-                                                    String address, BigDecimal commission) {
-
+    public InsuranceCompany createInsuranceCompany(String name, String taxOffice, String taxNumber, String address, BigDecimal commission) {
         InsuranceCompany insuranceCompany = new InsuranceCompany();
-
         insuranceCompany.setName(name);
-
         insuranceCompany.setTaxOffice(taxOffice);
         insuranceCompany.setTaxNumber(taxNumber);
         insuranceCompany.setAddress(address);
         insuranceCompany.setCommission(commission);
-
         return insuranceCompany;
-
     }
 
-    public void addInsuranceToInsuranceCompany(Insurance insurance, InsuranceCompany insuranceCompany){
-        if(insuranceCompany.getInsuranceList() != null){
+    public void addInsuranceToInsuranceCompany(InsuranceCompany insuranceCompany, Insurance insurance) {
+        if (insuranceCompany.getInsuranceList() != null) {
             insuranceCompany.getInsuranceList().add(insurance);
         } else {
             ArrayList<Insurance> insuranceList = new ArrayList<>();
@@ -36,8 +26,8 @@ public class InsuranceCompanyService {
         }
     }
 
-    public void addBankAccountToInsuranceCompany(BankAccount bankAccount, InsuranceCompany insuranceCompany){
-        if(insuranceCompany.getBankAccountList() != null){
+    public void addBankAccountToInsuranceCompany(InsuranceCompany insuranceCompany, BankAccount bankAccount) {
+        if (insuranceCompany.getBankAccountList() != null) {
             insuranceCompany.getBankAccountList().add(bankAccount);
         } else {
             ArrayList<BankAccount> bankAccountList = new ArrayList<>();
@@ -46,9 +36,8 @@ public class InsuranceCompanyService {
         }
     }
 
-    public void addPaymentMovementToInsuranceCompany(PaymentMovement paymentMovement,
-                                                     InsuranceCompany insuranceCompany){
-        if(insuranceCompany.getPaymentMovementList() != null){
+    public void addPaymentMovementToInsuranceCompany(InsuranceCompany insuranceCompany, PaymentMovement paymentMovement) {
+        if (insuranceCompany.getPaymentMovementList() != null) {
             insuranceCompany.getPaymentMovementList().add(paymentMovement);
         } else {
             ArrayList<PaymentMovement> paymentMovementList = new ArrayList<>();

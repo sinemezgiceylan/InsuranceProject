@@ -13,6 +13,14 @@ public class InsuranceCompany {
     private ArrayList<BankAccount> bankAccountList;
     private ArrayList<PaymentMovement> paymentMovementList;
 
+    public InsuranceCompany(String name, String taxOffice, String taxNumber, String address, BigDecimal commission) {
+        this.name = name;
+        this.taxOffice = taxOffice;
+        this.taxNumber = taxNumber;
+        this.address = address;
+        this.commission = commission;
+    }
+
     public InsuranceCompany() {
 
     }
